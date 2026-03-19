@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nettie & Sonia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffeef8 0%, #e6d4f5 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff69b4 0%, #da70d6 100%);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header p {
+            font-size: 1.2em;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 0 20px;
+            text-decoration: none;
+            color: #da70d6;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff69b4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .hero-section h2 {
+            font-size: 2.5em;
+            color: #da70d6;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.3em;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .profiles {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideUp 0.6s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-header-sonia {
+            background: linear-gradient(135deg, #ff9f43 0%, #ffa502 100%);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .profile-header-nettie {
+            background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .profile-header h3 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .profile-content {
+            padding: 30px;
+        }
+
+        .profile-content h4 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .profile-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .interests {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .interests h5 {
+            color: #ff69b4;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .interests ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .interests li {
+            color: #666;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .interests li:before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .profiles {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.05);
+            padding: 30px 20px;
+            text-align: center;
+            color: #999;
+            margin-top: 60px;
+            border-top: 2px solid rgba(255, 105, 180, 0.2);
+        }
+
+        footer p {
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>💖 Nettie & Sonia 💖</h1>
+        <p>Where Music Meets Movies</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#sonia">Sonia</a>
+        <a href="#nettie">Nettie</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <div class="container">
+        <section class="hero-section" id="home">
+            <h2>Welcome to Our Story</h2>
+            <p>Two amazing girls, two incredible passions. Sonia brings the magic of cinema, while Nettie fills the air with melodies. Welcome to their world! 🌸</p>
+        </section>
+
+        <section class="profiles">
+            <div class="profile-card" id="sonia">
+                <div class="profile-header-sonia">
+                    <div class="icon">🎬</div>
+                    <h3>Sonia</h3>
+                    <p style="font-size: 1.1em;">Movie Enthusiast</p>
+                </div>
+                <div class="profile-content">
+                    <h4>The Filmmaker's Heart</h4>
+                    <p>Sonia lives and breathes cinema! From indie films to blockbuster adventures, she has an eye for storytelling and cinematography that captivates audiences.</p>
+                    <div class="interests">
+                        <h5>Favorite Genres</h5>
+                        <ul>
+                            <li>Drama & Romance</li>
+                            <li>Fantasy Adventures</li>
+                            <li>Indie Films</li>
+                            <li>Sci-Fi masterpieces</li>
+                            <li>Animated Stories</li>
+                        </ul>
+                    </div>
+                    <p style="margin-top: 20px; font-style: italic; color: #ff9f43;">"Every frame tells a story, and I'm here to experience them all." 🎥</p>
+                </div>
+            </div>
+
+            <div class="profile-card" id="nettie">
+                <div class="profile-header-nettie">
+                    <div class="icon">🎵</div>
+                    <h3>Nettie</h3>
+                    <p style="font-size: 1.1em;">Music Lover</p>
+                </div>
+                <div class="profile-content">
+                    <h4>The Melody Seeker</h4>
+                    <p>Nettie's soul resonates with music! Whether it's composing, performing, or discovering new artists, she believes that music is the universal language of emotion.</p>
+                    <div class="interests">
+                        <h5>Musical Interests</h5>
+                        <ul>
+                            <li>Piano & Violin</li>
+                            <li>Pop & Indie Music</li>
+                            <li>Songwriting</li>
+                            <li>Jazz & Blues</li>
+                            <li>Live Concerts & Performances</li>
+                        </ul>
+                    </div>
+                    <p style="margin-top: 20px; font-style: italic; color: #a855f7;">"Music is my heartbeat, my story, my everything." 🎶</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" style="background: white; padding: 40px; border-radius: 15px; text-align: center; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);">
+            <h2 style="color: #da70d6; margin-bottom: 20px;">About This Page</h2>
+            <p style="font-size: 1.1em; color: #666; line-height: 1.8;">
+                This landing page celebrates two wonderful souls and their passions. Whether you're here to learn about Sonia's love for cinema, 
+                Nettie's musical journey, or simply to enjoy the creative expression of both—you're in the right place! 
+                <br><br>
+                <strong style="color: #ff69b4;">We hope you enjoy exploring their worlds! 💝</strong>
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Nettie & Sonia | A celebration of passion, creativity, and friendship 💜🎬🎵</p>
+    </footer>
+</body>
+</html>
